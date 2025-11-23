@@ -542,6 +542,250 @@
             margin: 15px 0;
         }
 
+        /* Chefs Section */
+        .chefs-section {
+            background-color: var(--white);
+            padding: 50px 20px;
+        }
+
+        .chefs-intro {
+            text-align: center;
+            font-size: 1.05rem;
+            color: #2c2c2c;
+            margin-bottom: 45px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        .chefs-carousel {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: stretch;
+            gap: 35px;
+            min-height: 300px;
+            touch-action: pan-y;
+        }
+
+        .chef-card {
+            display: none;
+            flex: 1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            animation: fadeInChef 0.5s ease;
+        }
+
+        .chef-card.active {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 35px;
+            align-items: center;
+            opacity: 1;
+        }
+
+        @keyframes fadeInChef {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .chef-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+            width: 100%;
+            height: 300px;
+            flex-shrink: 0;
+        }
+
+        .chef-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .chef-info {
+            padding: 0;
+        }
+
+        .chef-info h3 {
+            font-size: 1.7rem;
+            color: var(--gold);
+            margin-bottom: 4px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+
+        .chef-title {
+            font-size: 0.8rem;
+            color: var(--dark);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 12px;
+            opacity: 0.85;
+        }
+
+        .chef-info p {
+            font-size: 0.92rem;
+            line-height: 1.65;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+
+        .chef-info p:last-child {
+            margin-bottom: 0;
+        }
+
+        .chefs-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 35px;
+            flex-wrap: wrap;
+        }
+
+        .chef-nav-btn {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+            background-color: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .chef-nav-btn.active {
+            background-color: var(--gold);
+            width: 13px;
+            height: 13px;
+        }
+
+        .chef-nav-btn:hover {
+            transform: scale(1.25);
+        }
+
+        /* Music Section */
+        .music-section {
+            background: linear-gradient(135deg, #313647 0%, #1a1a1a 100%);
+            padding: 60px 20px;
+        }
+
+        .music-section .section-title {
+            color: var(--gold);
+            margin-bottom: 40px;
+        }
+
+        .music-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .music-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+            height: 350px;
+        }
+
+        .music-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .music-info h3 {
+            font-size: 2.2rem;
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .music-subtitle {
+            font-size: 0.9rem;
+            color: var(--cream);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+            opacity: 0.9;
+        }
+
+        .music-info p {
+            font-size: 1rem;
+            line-height: 1.75;
+            color: var(--cream);
+            margin-bottom: 0;
+        }
+
+        /* Music Section Responsive */
+        @media (max-width: 768px) {
+            .music-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .music-image {
+                height: 300px;
+            }
+
+            .music-info h3 {
+                font-size: 1.8rem;
+            }
+
+            .music-info p {
+                font-size: 0.95rem;
+                line-height: 1.65;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .music-section {
+                padding: 40px 15px;
+            }
+
+            .music-section .section-title {
+                margin-bottom: 30px;
+            }
+
+            .music-content {
+                gap: 20px;
+            }
+
+            .music-image {
+                height: 250px;
+                border-radius: 12px;
+            }
+
+            .music-info h3 {
+                font-size: 1.5rem;
+                margin-bottom: 6px;
+            }
+
+            .music-subtitle {
+                font-size: 0.8rem;
+                margin-bottom: 12px;
+                letter-spacing: 0.5px;
+            }
+
+            .music-info p {
+                font-size: 0.9rem;
+                line-height: 1.6;
+            }
+        }
+
         /* Sponsors Section */
         .sponsors {
             background: linear-gradient(135deg, var(--peach) 0%, var(--cream) 100%);
@@ -795,6 +1039,28 @@
                 line-height: 1.5;
                 margin-bottom: 5px;
             }
+
+            .chefs-carousel {
+                gap: 30px;
+                min-height: 400px;
+            }
+
+            .chef-card.active {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .chef-image {
+                min-height: 300px;
+            }
+
+            .chef-info h3 {
+                font-size: 1.5rem;
+            }
+
+            .chef-info p {
+                font-size: 0.9rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -903,6 +1169,62 @@
                 font-size: 0.8rem;
                 line-height: 1.5;
                 margin-bottom: 4px;
+            }
+
+            .chefs-carousel {
+                gap: 12px;
+                min-height: 320px;
+            }
+
+            .chef-card.active {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .chef-image {
+                height: 240px;
+                border-radius: 10px;
+            }
+
+            .chef-info {
+                padding: 0;
+            }
+
+            .chef-info h3 {
+                font-size: 1.25rem;
+                margin-bottom: 3px;
+            }
+
+            .chef-title {
+                font-size: 0.72rem;
+                margin-bottom: 8px;
+                letter-spacing: 0.5px;
+            }
+
+            .chef-info p {
+                font-size: 0.82rem;
+                line-height: 1.5;
+                margin-bottom: 5px;
+            }
+
+            .chefs-nav {
+                margin-top: 25px;
+                gap: 8px;
+            }
+
+            .chef-nav-btn {
+                width: 9px;
+                height: 9px;
+            }
+
+            .chef-nav-btn.active {
+                width: 10px;
+                height: 10px;
+            }
+
+            .chefs-intro {
+                font-size: 0.9rem;
+                margin-bottom: 30px;
             }
 
             .reservation-cta {
@@ -1046,6 +1368,99 @@
         </div>
     </section>
 
+    <!-- Chefs Section -->
+    <section class="chefs-section">
+        <div class="container">
+            <h2 class="section-title lang-es">Nuestros Chefs</h2>
+            <h2 class="section-title lang-en">Our Chefs</h2>
+            
+            <p class="chefs-intro" style="text-align: center; font-size: 1.05rem; color: #2c2c2c; margin-bottom: 45px; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.7;">
+                <span class="lang-es">Cinco reconocidos chefs unen sus talentos para crear una experiencia gastronómica única. Desde técnicas europeas hasta sabores auténticos de México, cada chef trae su excelencia a esta noche inolvidable.</span>
+                <span class="lang-en">Five renowned chefs unite their talents to create a unique gastronomic experience. From European techniques to authentic Mexican flavors, each chef brings their excellence to this unforgettable evening.</span>
+            </p>
+            
+            <div class="chefs-carousel">
+                <div class="chef-card active" id="chef-1">
+                    <div class="chef-image">
+                        <img src="imagenes/paul.jpg" alt="Chef Paul Delrez">
+                    </div>
+                    <div class="chef-info">
+                        <h3 class="lang-es">Paul Delrez</h3>
+                        <h3 class="lang-en">Paul Delrez</h3>
+                        <p class="chef-title lang-es">Chef Principal • Maestría Europea</p>
+                        <p class="chef-title lang-en">Head Chef • European Mastery</p>
+                        <p class="lang-es">Desde Bélgica, Paul lidera con disciplina y sofisticación. Su técnica refinada fusiona la escuela europea con ingredientes locales, siendo la autoridad culinaria de este evento.</p>
+                        <p class="lang-en">From Belgium, Paul leads with discipline and sophistication. His refined technique fuses European culinary tradition with local ingredients, making him the culinary authority of this event.</p>
+                    </div>
+                </div>
+
+                <div class="chef-card" id="chef-2">
+                    <div class="chef-image">
+                        <img src="imagenes/ALLAN.jpg" alt="Chef Allan Yáñez">
+                    </div>
+                    <div class="chef-info">
+                        <h3 class="lang-es">Allan Yáñez</h3>
+                        <h3 class="lang-en">Allan Yáñez</h3>
+                        <p class="chef-title lang-es">Experiencia y Técnica Global</p>
+                        <p class="chef-title lang-en">Global Experience & Technique</p>
+                        <p class="lang-es">Con una trayectoria que trasciende fronteras, Allan trae un bagaje culinario diverso. Su cocina se distingue por una ejecución precisa y visión vanguardista.</p>
+                        <p class="lang-en">With a career transcending borders, Allan brings diverse culinary expertise. His cuisine stands out for precise execution and avant-garde vision.</p>
+                    </div>
+                </div>
+
+                <div class="chef-card" id="chef-3">
+                    <div class="chef-image">
+                        <img src="imagenes/Rene.jpg" alt="Chef René Pacheco">
+                    </div>
+                    <div class="chef-info">
+                        <h3 class="lang-es">René Pacheco</h3>
+                        <h3 class="lang-en">René Pacheco</h3>
+                        <p class="chef-title lang-es">El Sazón de México</p>
+                        <p class="chef-title lang-en">Mexico's Authentic Flavors</p>
+                        <p class="lang-es">Guardián de los sabores auténticos, René reinterpreta la cocina nacional con técnicas profesionales, elevando el gusto de nuestra tierra a un nivel de alta competencia.</p>
+                        <p class="lang-en">Guardian of authentic flavors, René reinterprets Mexican cuisine with professional techniques, elevating our culinary heritage to the highest level of competition.</p>
+                    </div>
+                </div>
+
+                <div class="chef-card" id="chef-4">
+                    <div class="chef-image">
+                        <img src="imagenes/fernando.png" alt="Chef Fernando González Incháustegui">
+                    </div>
+                    <div class="chef-info">
+                        <h3 class="lang-es">Fernando González Incháustegui</h3>
+                        <h3 class="lang-en">Fernando González Incháustegui</h3>
+                        <p class="chef-title lang-es">Arte en Chocolate • Orgullo de Puebla</p>
+                        <p class="chef-title lang-en">Chocolate Artist • Pride of Puebla</p>
+                        <p class="lang-es">Licenciado en Artes Culinarias por el ICUM de Puebla, Fernando domina el cacao con técnica moderna impecable, combinando tradición poblana con excelencia contemporánea.</p>
+                        <p class="lang-en">Graduate in Culinary Arts from ICUM Puebla, Fernando masters cacao with impeccable modern technique, blending Pueblan tradition with contemporary excellence.</p>
+                    </div>
+                </div>
+
+                <div class="chef-card" id="chef-5">
+                    <div class="chef-image">
+                        <img src="imagenes/Isaac.jpg" alt="Chef Isaac Rivera">
+                    </div>
+                    <div class="chef-info">
+                        <h3 class="lang-es">Isaac Rivera</h3>
+                        <h3 class="lang-en">Isaac Rivera</h3>
+                        <p class="chef-title lang-es">Talento Local • La Firma de Agricole</p>
+                        <p class="chef-title lang-en">Local Talent • Agricole's Signature</p>
+                        <p class="lang-es">Desde la cocina de Agricole, Isaac domina el producto local. Su cocina refleja el terruño sudcaliforniano con una habilidad excepcional para llevar lo "del campo a la mesa" de forma sofisticada.</p>
+                        <p class="lang-en">From Agricole's kitchen, Isaac masters local ingredients. His cuisine reflects Baja California Sur terroir with exceptional skill in farm-to-table sophistication.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chefs-nav">
+                <button class="chef-nav-btn active" onclick="showChef(0)" data-chef="1"></button>
+                <button class="chef-nav-btn" onclick="showChef(1)" data-chef="2"></button>
+                <button class="chef-nav-btn" onclick="showChef(2)" data-chef="3"></button>
+                <button class="chef-nav-btn" onclick="showChef(3)" data-chef="4"></button>
+                <button class="chef-nav-btn" onclick="showChef(4)" data-chef="5"></button>
+            </div>
+        </div>
+    </section>
+
     <!-- Featured Menu - Dark Background -->
     <section class="featured-section dark-bg">
         <div class="container">
@@ -1113,8 +1528,8 @@
     <!-- Menu Section -->
     <section class="menu">
         <div class="container">
-            <h2 class="section-title lang-es">Menú Agricole</h2>
-            <h2 class="section-title lang-en">Agricole Menu</h2>
+            <h2 class="section-title lang-es">Menú del Evento</h2>
+            <h2 class="section-title lang-en">Event Menu</h2>
             
             <div class="menu-grid">
                 <div class="menu-item">
@@ -1170,6 +1585,27 @@
         </div>
     </section>
 
+    <!-- Music Section -->
+    <section class="music-section">
+        <div class="container">
+            <h2 class="section-title lang-es">Artistas en Vivo</h2>
+            <h2 class="section-title lang-en">Live Artists</h2>
+            <div class="music-content">
+                <div class="music-image">
+                    <img src="imagenes/banda.png" alt="Los Hijos del Trópico">
+                </div>
+                <div class="music-info">
+                    <h3 class="lang-es">Los Hijos del Trópico</h3>
+                    <h3 class="lang-en">Los Hijos del Trópico</h3>
+                    <p class="music-subtitle lang-es">Fusión Musical • Talento Sudcaliforniano</p>
+                    <p class="music-subtitle lang-en">Musical Fusion • Baja California Talent</p>
+                    <p class="lang-es">Más que música en vivo, una experiencia auditiva. Esta banda de fusión combina ritmos latinos, funk y sonidos costeros con virtuosismo técnico. Su capacidad para crear atmósferas sofisticadas mientras conectan con la audiencia garantiza el soundtrack perfecto para esta noche única.</p>
+                    <p class="lang-en">More than live music, an auditory experience. This fusion band combines Latin rhythms, funk, and coastal sounds with technical virtuosity. Their ability to create sophisticated atmospheres while connecting with the audience guarantees the perfect soundtrack for this unique evening.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Reservation -->
     <section class="reservation" id="reserva">
         <div class="container">
@@ -1198,6 +1634,12 @@
     <a href="https://wa.link/v3ac7s" target="_blank" class="floating-reservation" aria-label="Reservar por WhatsApp" title="Reservar por WhatsApp"></a>
 
     <script>
+        let currentChefIndex = 0;
+        const totalChefs = 5;
+        let chefAutoplayInterval;
+        let touchStartX = 0;
+        let touchEndX = 0;
+
         function setLanguage(lang) {
             const body = document.body;
             const btnEs = document.getElementById('btn-es');
@@ -1216,10 +1658,64 @@
             }
         }
 
+        // Chef Carousel Function
+        function showChef(index) {
+            currentChefIndex = index;
+            const cards = document.querySelectorAll('.chef-card');
+            const btns = document.querySelectorAll('.chef-nav-btn');
+            
+            cards.forEach(card => card.classList.remove('active'));
+            btns.forEach(btn => btn.classList.remove('active'));
+            
+            cards[index].classList.add('active');
+            btns[index].classList.add('active');
+            
+            // Reset autoplay timer when user clicks
+            clearInterval(chefAutoplayInterval);
+            startChefAutoplay();
+        }
+
+        // Touch swipe handling
+        function handleChefSwipe(e) {
+            const carousel = document.querySelector('.chefs-carousel');
+            if (e.type.startsWith('touch')) {
+                if (e.type === 'touchstart') {
+                    touchStartX = e.changedTouches[0].screenX;
+                } else if (e.type === 'touchend') {
+                    touchEndX = e.changedTouches[0].screenX;
+                    handleChefSwipeLogic();
+                }
+            }
+        }
+
+        function handleChefSwipeLogic() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swiped left, show next chef
+                    currentChefIndex = (currentChefIndex + 1) % totalChefs;
+                } else {
+                    // Swiped right, show previous chef
+                    currentChefIndex = (currentChefIndex - 1 + totalChefs) % totalChefs;
+                }
+                showChef(currentChefIndex);
+            }
+        }
+
+        // Autoplay chefs
+        function startChefAutoplay() {
+            chefAutoplayInterval = setInterval(function() {
+                currentChefIndex = (currentChefIndex + 1) % totalChefs;
+                showChef(currentChefIndex);
+            }, 5000); // Change chef every 5 seconds
+        }
+
         // Countdown Timer
         function updateCountdown() {
-            // Event date: November 29, 2025 at 4:00 PM
-            const eventDate = new Date('2025-11-29T16:00:00').getTime();
+            // Event date: November 29, 2025 at 4:30 PM
+            const eventDate = new Date('2025-11-29T16:30:00').getTime();
             const now = new Date().getTime();
             const distance = eventDate - now;
 
@@ -1252,6 +1748,16 @@
             // Update countdown immediately and every second
             updateCountdown();
             setInterval(updateCountdown, 1000);
+            
+            // Start chef autoplay
+            startChefAutoplay();
+            
+            // Add touch swipe support
+            const carousel = document.querySelector('.chefs-carousel');
+            if (carousel) {
+                carousel.addEventListener('touchstart', handleChefSwipe, false);
+                carousel.addEventListener('touchend', handleChefSwipe, false);
+            }
         });
     </script>
 </body>
